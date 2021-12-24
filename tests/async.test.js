@@ -36,3 +36,13 @@ test("await Promise.all", async () => {
   ]);
   console.log("res1", res1);
 }, 30000);
+
+test('await fetch apis', () => {
+  const r1 = fetch('http://www.api1.com');
+  const r2 = fetch('http://www.api2.com');
+  const r3 = fetch('http://www.api3.com');
+
+  const j1 = await (await r1).json();
+  const j2 = await (await r2).json();
+  const j3 = await (await r3).json();
+});
